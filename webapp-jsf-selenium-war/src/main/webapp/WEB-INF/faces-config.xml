@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<faces-config version="1.2" xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xi="http://www.w3.org/2001/XInclude"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_1_2.xsd">
+
+	<managed-bean>
+		<managed-bean-name>bidonBean</managed-bean-name>
+		<managed-bean-class>
+			com.cestpasdur.samples.mavenjsf.managedbeans.BidonBean
+		</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
+
+    <managed-bean>
+		<managed-bean-name>contactBean</managed-bean-name>
+		<managed-bean-class>
+			com.cestpasdur.samples.mavenjsf.managedbeans.ContactBean
+		</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+
+    <navigation-rule>
+        <from-view-id>*</from-view-id>
+        <navigation-case>
+            <from-outcome></from-outcome>
+            <to-view-id>/views/contact/success.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+
+	<!-- indique que l on utilise facelets comme gestionnaire de vues -->
+	<application>
+		<view-handler>com.sun.facelets.FaceletViewHandler</view-handler>
+	</application>
+
+</faces-config>
