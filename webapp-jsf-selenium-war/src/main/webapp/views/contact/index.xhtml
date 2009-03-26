@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+<ui:composition template="/WEB-INF/templates/layout.xhtml">
+	<ui:define name="titre">Formulaire de contact</ui:define>
+	<ui:define name="contenu">
+            <h:form id="formContact">
+                <ul>
+                    <li>
+                        <h:inputText id="nom" value="#{contactBean.contact.nom}"/>
+                    </li>
+                    <li>
+                        <h:inputText id="prenom" value="#{contactBean.contact.prenom}"/>
+                    </li>
+                    <li>
+                        <h:inputText id="email" value="#{contactBean.contact.email}"/>
+                    </li>
+                    <li>
+                        <h:inputTextarea id="message" value="#{contactBean.contact.message}"/>
+                    </li>
+                    <li>
+                        <h:commandButton id="submit" action="#{contactBean.doAddContact}" value="Valider"/>
+                    </li>
+
+                </ul>
+                <h:messages/>
+
+            </h:form>
+       </ui:define>
+    </ui:composition>
+
+
+</html>
+
+
